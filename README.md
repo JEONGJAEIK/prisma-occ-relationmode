@@ -1,5 +1,7 @@
 # `updateMany` drops its `where` filter under `relationMode = "prisma"`
 
+Reported as [prisma/orm#30758](https://github.com/prisma/orm/issues/30758).
+
 With `relationMode = "prisma"`, `updateMany` first selects the matching ids and then runs
 `UPDATE ... WHERE id IN (...) AND 1=1`. The original `where` filter is not applied to the `UPDATE`, so a row that
 stopped matching between the two statements is still updated and still counted.
