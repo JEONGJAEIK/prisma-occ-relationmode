@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:18
+    # Log every statement the server receives, with bound parameters (npm run db:logs).
+    command: ["postgres", "-c", "log_statement=all"]
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+      POSTGRES_DB: occ_fk
+    ports:
+      - "54329:5432"
+    volumes:
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql:ro

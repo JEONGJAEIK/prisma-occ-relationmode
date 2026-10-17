@@ -1,0 +1,17 @@
+// A product with a stock counter. Buying decrements stock only while it is above zero.
+// Only relationMode differs between the two schemas. The model has no relations on purpose.
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/emulated"
+}
+
+datasource db {
+  provider     = "postgresql"
+  relationMode = "prisma"
+}
+
+model Product {
+  id    Int    @id @default(autoincrement())
+  name  String
+  stock Int
+}

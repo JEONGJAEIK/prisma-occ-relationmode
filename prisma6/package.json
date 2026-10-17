@@ -1,0 +1,19 @@
+{
+  "name": "prisma-occ-relationmode-v6",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "prisma generate --schema prisma/fk.prisma && prisma generate --schema prisma/emulated.prisma",
+    "repro": "tsx repro.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.3",
+    "pg": "8.16.3"
+  },
+  "devDependencies": {
+    "dotenv": "17.2.3",
+    "prisma": "6.19.3",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  }
+}

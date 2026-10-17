@@ -1,0 +1,5 @@
+node_modules/
+generated/
+NOTES.ko.md
+local/
+.idea/
